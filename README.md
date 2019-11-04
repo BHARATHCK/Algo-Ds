@@ -56,3 +56,12 @@ def BinarySearchHelper(array , target , left , right):
       		left = middlePointer + 1
   return -1;
 ````
+
+## SEARCH 3 LARGEST NUMBERS IN AN ARRAY
+If you thought you could just sort the array and pick the largest last 3 indexes, you are right. But, we need not sort the entire array just to get 3 elements.
+
+#### Cool, But how to do that?
+Simple, just search each element and put the element in an array of size 3 while comparing that element with value in 2,1,0 indexes of the 3 sized array.
+* if the element is greater replace and shift
+* if not, then we dont care about that value
+
