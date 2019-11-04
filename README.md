@@ -61,7 +61,30 @@ def BinarySearchHelper(array , target , left , right):
 If you thought you could just sort the array and pick the largest last 3 indexes, you are right. But, we need not sort the entire array just to get 3 elements.
 
 #### Cool, But how to do that?
-Simple, just search each element and put the element in an array of size 3 while comparing that element with value in 2,1,0 indexes of the 3 sized array.
-* if the element is greater replace and shift
-* if not, then we dont care about that value
+Simple, just pick each element from given array and put the element in an array of size 3 [let's name this array as threeLargest] while comparing that element with value in 2,1,0 indexes of the threeLargest array.
+* if the element is greater replace and shift the other values.
+* if not, then we dont care about that value.
+Finally, after iterating through all values of array, we will end up with an array of 3 largest numbers:smiley:.
 
+````python
+def findThreeLargestNumbers(array):
+	threeLargestArray = [None,None,None]
+	for num in array:
+		updateThreeLargest(threeLargestArray,num)
+	return threeLargestArray
+
+def updateThreeLargest(threeLargestArray , num):
+	if threeLargestArray[2] is None or num > threeLargestArray[2]:
+		shiftAndUpdate(threeLargestArray , num , 2) 
+	elif threeLargestArray[1] is None or num > threeLargestArray[1]:
+		shiftAndUpdate(threeLargestArray , num , 1) 
+	elif threeLargestArray[0] is None or num > threeLargestArray[0]:
+		shiftAndUpdate(threeLargestArray , num , 0) 
+		
+def shiftAndUpdate(array , num , index):
+	for i in range (index+1):
+		if i == index:
+			array[i] = num
+		else:
+			array[i] = array[i+1]
+````
