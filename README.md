@@ -88,3 +88,22 @@ def shiftAndUpdate(array , num , index):
 		else:
 			array[i] = array[i+1]
 ````
+
+
+## SEARCH FOR A NUMBER IN A 2D MATRIX
+Given a 2d matrix where all the rows and columns are sorted and a target number, we need to find if the target is present in the matrix or not. If the target is present then we need to return the co-ordinates and an array of -1,-1 if not.
+Note: the matrix doesn't necessarily have equal rows and columns.
+
+let' take a look at the matrix:
+> [1,4,7,12,15,1000]  
+> [2,5,19,31,32,1001]  
+> [3,8,24,33,35,1002]  
+> [40,41,42,43,45,1003]  
+> [99,100,103,106,128,1004]   
+>  TARGET : 44
+
+So, Obviously iterating through all the elements is not the way to go. What we can do is use the concept of Binary Search [Rows and Columns are sorted, Remember?] and keep eliminating the un-necessary values.
+
+If you think about it what we can do is start at 1000 and compare with 44.
+* Since, it's a sorted matrix and 44 is less than 1000, we need not iterate through last column.
+* Now, we are at 15. So, since 15 is less than 44, we need not iterate further in that row and move to next row.
