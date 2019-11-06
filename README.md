@@ -107,3 +107,22 @@ So, Obviously iterating through all the elements is not the way to go. What we c
 If you think about it what we can do is start at 1000 and compare with 44.
 * Since, it's a sorted matrix and 44 is less than 1000, we need not iterate through last column.
 * Now, we are at 15. So, since 15 is less than 44, we need not iterate further in that row and move to next row.
+
+Below is the implementation of python:
+
+````python
+def searchInSortedMatrix(matrix, target): 
+	row = 0
+	col = len(matrix[0]) - 1
+	
+	while row < len(matrix) and col >= 0:
+		if matrix[row][col] > target:
+			col = col - 1
+		elif matrix[row][col] < target:
+			row = row + 1
+		else:
+			return [row,col]
+	return [-1,-1]
+	
+
+````
