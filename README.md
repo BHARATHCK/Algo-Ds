@@ -126,3 +126,14 @@ def searchInSortedMatrix(matrix, target):
 	
 
 ````
+
+## SHIFTED BINARY SEARCH
+Similar to binary search, but as the name suggests, it's shifted.
+let's assume an array -> [45,61,71,72,73,0,1,21,33,45] and target = 33
+* So, first as usual consider the middle pointer.
+	* left = 0 , right = len(array) - 1 , middlePointer is 4 in this case.
+* now , we need to try eliminating a half of an array.
+* compare 73 with 45, since 45 is less than 73, we can assume that the target is in the left part of the array but we also need to 		compare the target with 45 to confirm if the target is in this half of the array.
+	* Since, target < 45 it's not in this part of the array.
+* then we can go ahead and ignore 1st half of array and binary search on the 2nd half of the array.
+* repeat the process until the left pointer is <= right pointer:smiley:.
