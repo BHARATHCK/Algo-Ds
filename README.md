@@ -137,3 +137,32 @@ let's assume an array -> [45,61,71,72,73,0,1,21,33,45] and target = 33
 	* Since, target < 45 it's not in this part of the array.
 * then we can go ahead and ignore 1st half of array and binary search on the 2nd half of the array.
 * repeat the process until the left pointer is <= right pointer:smiley:.
+
+Implementation in python:
+
+````python
+def shiftedBinarySearch(array,target):
+	return shiftedbinarysearchhelper(array , target , 0 , len(array) - 1)
+	
+def shiftedbinarysearchhelper(array , target , left , right):
+	while left <= right:
+		middle = (left + right) // 2
+		potentialMatch = array[middle]
+		leftNum = array[left]
+		rightNum = array[right]
+		
+		if potentialMatch == target:
+			return middle
+		
+		if leftNum <= potentialMatch:
+			if target < potentialMatch and target >= leftNum:
+				right = middle - 1
+			else:
+				left = middle + 1
+		else:
+			if target > potentialMatch and target <= rightNum:
+				left = middle + 1
+			else:
+				right = middle -1
+	return -1
+````
