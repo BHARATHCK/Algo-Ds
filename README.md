@@ -166,3 +166,15 @@ def shiftedbinarysearchhelper(array , target , left , right):
 				right = middle -1
 	return -1
 ````
+
+
+## SEARCH FOR RANGE
+Just like searching for a target in a sorted array using binary search, we now need to handle an array which is also sorted but has duplicate target numbers.
+Let's assume the below scenario:
+> [0,1,22,33,45,45,45,45,45,80,61,54,87,90]    
+> Target : 45;
+
+So, how to solve the above?
+
+> * Simple just follow binary search but we need to check if other indexes contain the target element.
+> * and also check if the target elements are extreme indices in the array.
