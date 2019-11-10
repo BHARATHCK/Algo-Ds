@@ -178,3 +178,36 @@ So, how to solve the above?
 
 > * Simple just follow binary search but we need to check if other indexes contain the target element.
 > * and also check if the target elements are extreme indices in the array.
+
+Implementation in python:
+
+````python
+def searchForRange(array, target):
+	finalRange = [-1,-1]
+	getTheRange(array , target , 0 , len(array) - 1 , finalRange , True)
+	getTheRange(array , target , 0 , len(array) - 1 , finalRange , False)
+	return finalRange
+	
+def getTheRange(array , target , left , right , finalRange , goLeft):
+	while left <= right:
+		while left <= right:
+			middle = (left + right) // 2
+		
+			if target < array[middle]:
+				right = middle - 1
+			elif target > array[middle]:
+				left = middle + 1
+			else:
+				if goLeft:
+					if middle == 0 or array[middle - 1] != target:
+						finalRange[0] = middle
+						return 
+					else:
+						right = middle - 1
+				else:
+					if middle == len(array) - 1 or array[middle + 1] != target:
+						finalRange[1] = middle
+						return
+					else:
+						left = middle + 1	
+````
