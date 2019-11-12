@@ -211,3 +211,24 @@ def getTheRange(array , target , left , right , finalRange , goLeft):
 					else:
 						left = middle + 1	
 ````
+
+
+
+# SORTING
+Sorting elements in a datastructure is very important operation which is vital in any software workings.
+
+## BUBBLE SORT
+In this sorting algorithm the intention is to finally sort the array by swapping two elements if they are not in ascending order while iterating through the array until the entire array is sorted.
+
+> Let's assume an array:
+> [8,5,2,9,5,6,3]
+> The output should be a sorted array -> [2,3,5,5,6,8,9]
+
+Steps to be followed:
+
+> * Declare a Boolean value and set it to false.
+> * using a for loop, iterate through the array.
+> * while 2 elements are not in ascending order , Swap them.
+> * and finally we need to check if we have reached a iteration where we haven't swapped any elements which means the array is sorted, for that consider changing the Boolean to false at if.
+
+
