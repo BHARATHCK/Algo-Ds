@@ -231,4 +231,18 @@ Steps to be followed:
 > * while 2 elements are not in ascending order , Swap them.
 > * and finally we need to check if we have reached a iteration where we haven't swapped any elements which means the array is sorted, for that consider changing the Boolean to false at if.
 
+Implementation in Python:
+
+````python
+def BubbleSort(array):
+	isSorted = False
+	while not isSorted:
+		isSorted = True
+		for i in range (len(array) - 1):
+			if array[i] > array[i+1]:
+				array[i],array[i+1] = array[i+1] , array[i]
+				isSorted = False
+	return array
+````
+
 
