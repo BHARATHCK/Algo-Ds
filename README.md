@@ -261,4 +261,35 @@ def BubbleSort(array):
 	return array
 ````
 
+## INSERTION SORT
+This algorithm is not the best of the lot but is pretty much straightforward.
+Let's assume an array [8,5,2,9,5,6,3]
+The steps to follow to sort the array using insertion sort:
+
+> * Iterate through the array using a for loop
+> * Compare the later element with current element
+> 	* If current element is greater than later element, swap them.
+	* While the above is true, continue to compare with previous elements until you reach 0.
+> * Repeat until you complete 1 iteration.
+
+Implementing with the example:
+
+````
+Compare 5 with 8 : Since, 8 > 5 , Swap them
+Now the array is as Follows : [5,8,2,9,5,6,3].
+
+Compare 2 with 8 : Since, 8 > 2 , Swap them
+Now the array is as Follows : [5,2,8,9,5,6,3].
+
+Remember? Repeat until you reach 0th index.
+
+So, Compare 2 with 5 , Since 5 > 2 , Swap them
+Now the array is as Follows : [2,5,8,9,5,6,3].
+
+You get the GIST right!
+````
+
+Voila! Now you have a sorted array.
+
+
 
