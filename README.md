@@ -291,5 +291,20 @@ You get the GIST right!
 
 Voila! Now you have a sorted array.
 
+Implementation in python : 
+
+````python
+def insertionSort(array):
+	for i in range(1 , len(array)):
+		j = i
+		while j > 0 and array[j] < array[j-1]:
+			swap(array , j , j-1)
+			j -= 1 # Reducing j by 1 so that the while loop runs until j hits 0 
+	return array
+	
+def swap(array , i , j):
+	array[i] , array[j] = array[j] , array[i]
+````
+
 
 
