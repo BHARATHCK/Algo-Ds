@@ -322,5 +322,22 @@ Steps to sort the array using Selection sort:
 
 Finally, the array is sorted after n^2 iteration at the best case.
 
+Implementation in python:
 
+````python
+def selectionSort(array):
+    currentIndex = 0
+	print(len(array))
+	while currentIndex <= len(array) - 1:
+		smallestIndex = currentIndex
+		for i in range (currentIndex + 1 , len(array)):
+			if array[smallestIndex] > array[i]:
+					smallestIndex = i
+		swap(array , smallestIndex , currentIndex)
+		currentIndex += 1
+	return array
+
+def swap(array , i , j):
+	array[i] , array[j] = array[j] , array[i]
+````
 
