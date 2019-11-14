@@ -306,5 +306,21 @@ def swap(array , i , j):
 	array[i] , array[j] = array[j] , array[i]
 ````
 
+## SELECTION SORT
+As the name suggests the algorithm is about selecting an element from the array and finding other element which is lesser and swap with the selected element, Eventually, the entire array gets sorted.
+
+Let's assume an array -> [8,5,2,9,5,6,3]
+
+Steps to sort the array using Selection sort:
+
+> * select 8 [use a pointer for it]
+> * compare with other elements, since 8 > 5 swap them
+> * Resulting array -> [5,8,2,9,5,6,3]
+> * compare 5 with 2 -> Swap
+> * Resulting array: [2,8,5,9,5,6,3]
+> * similarly after 1 iteration increase the pointer and repeat the process.
+
+Finally, the array is sorted after n^2 iteration at the best case.
+
 
 
