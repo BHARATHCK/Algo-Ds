@@ -341,3 +341,17 @@ def swap(array , i , j):
 	array[i] , array[j] = array[j] , array[i]
 ````
 
+## QUICK SORT
+This is the fastest and one of the most efficient algorithms to sort an array of elements.
+It follows Divide and Conquer methodology.
+To understand the concept, let's take an example and walk through a few moves.
+
+> Input array : [8,5,2,3,5,6,9]
+
+Steps to sort using quicksort:
+
+> * Take a pivot and partition the array.
+>      * The pivot can be a randomized position or first or last element in the array. We'll go with first element as pivot. And we also need 2 pointers Left and Right to denote the starting and ending index of partition.
+> * So, 8 -> pivot and 5 -> Left and 9 -> Right. 
+> * Here, Left <= Pivot but Right is not <= Pivot.
+>	* 
