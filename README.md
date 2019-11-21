@@ -360,44 +360,30 @@ Steps to sort using quicksort:
 Implementation in Python:
 
 ````Python
-# Python program for Quicksort
-# This function takes last element as pivot, places 
-# the pivot element at its correct position in sorted 
-# array, and places all smaller (smaller than pivot) 
-# to left of pivot and all greater elements to right 
-# of pivot 
-def partition(arr,low,high): 
-	i = ( low-1 )		 # index of smaller element 
-	pivot = arr[high]	 # pivot 
+def quickSort(array):
+	QuickSortHelper(array , 0 , len(array) - 1)
+	return array
 
-	for j in range(low , high): 
+def QuickSortHelper(array , startIdx , endIdx):
+	if startIdx >= endIdx: # HANDLING BASE CASE WHERE THE ARRAY SIZE IS 1 or Nothing
+		return 
+	pivotIdx = startIdx
+	leftIdx = startIdx + 1
+	rightIdx = endIdx
+	# Iterate through the array
+	while leftIdx <= rightIdx:
+		if array[leftIdx] >= array[pivotIdx] and array[rightIdx] <= array[pivotIdx]:
+			swap(array , leftIdx , rightIdx)
+		if array[leftIdx] <= array[pivotIdx]:
+			leftIdx += 1
+		if array[rightIdx] >= array[pivotIdx]:
+			rightIdx -= 1
+	swap(array , pivotIdx , rightIdx)
+	QuickSortHelper(array , rightIdx + 1 , endIdx)
+	QuickSortHelper(array , startIdx , rightIdx - 1)
+	
+def swap(array , i ,j):
+	array[i] , array[j] = array[j] , array[i]
+	
 
-		# If current element is smaller than or 
-		# equal to pivot 
-		if arr[j] <= pivot: 
-		
-			# increment index of smaller element 
-			i = i+1
-			arr[i],arr[j] = arr[j],arr[i] 
-
-	arr[i+1],arr[high] = arr[high],arr[i+1] 
-	return ( i+1 ) 
-
-# The main function that implements QuickSort 
-# arr[] --> Array to be sorted, 
-# low --> Starting index, 
-# high --> Ending index 
-
-# Function to do Quick sort 
-def quickSort(arr,low,high): 
-	if low < high: 
-
-		# pi is partitioning index, arr[p] is now 
-		# at right place 
-		pi = partition(arr,low,high) 
-
-		# Separately sort elements before 
-		# partition and after partition 
-		quickSort(arr, low, pi-1) 
-		quickSort(arr, pi+1, high)
 ````
